@@ -1,6 +1,5 @@
 ###API KEYS HERE###
 
-
  #IMPORT DISCORD.PY. ALLOWS ACCESS TO DISCORD'S API.
 import discord
 
@@ -33,4 +32,4 @@ async def on_message(message):
         await message.channel.send("hey dirtbag")
 
 
-bot.run("team1")
+bot.run("API_TOKEN_HERE")
