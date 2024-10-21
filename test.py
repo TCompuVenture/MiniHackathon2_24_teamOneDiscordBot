@@ -32,4 +32,4 @@ async def on_message(message):
         await message.channel.send("hey dirtbag")
 
 
-bot.run("API_TOKEN_HERE")
+bot.run("API_TOKEN_HERE!!!")
