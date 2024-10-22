@@ -3,6 +3,23 @@
  #IMPORT DISCORD.PY. ALLOWS ACCESS TO DISCORD'S API.
 import discord
 
+
+
+def create_grid():
+    print("Behold, the game board: ")
+    board = [[" ", " ", " "],
+             [" ", " ", " "],
+             [" ", " ", " "]]
+    return board
+
+def game():
+    board = create_grid()
+    #print(board)
+
+
+
+
+
  #GETS THE CLIENT OBJECT FROM DISCORD.PY. CLIENT IS SYNONYMOUS WITH BOT.
 bot = discord.Client(intents=discord.Intents.all())
 
@@ -33,6 +50,9 @@ async def on_ready():
 @bot.event
 async def on_message(message):
     channel = bot.get_channel(1297890380578033664)
+    grid = create_grid()
+
+
     # CHECKS IF THE MESSAGE THAT WAS SENT IS EQUAL TO "HELLO".
     # need to assign player vars
     global player1
@@ -53,7 +73,9 @@ async def on_message(message):
 
 
         # SENDS BACK A MESSAGE TO THE CHANNEL.
-        await message.channel.send("")
+        await message.channel.send(grid[0])
+        await message.channel.send(grid[1])
+        await message.channel.send(grid[2])
 
 
 bot.run("API TOKEN")
