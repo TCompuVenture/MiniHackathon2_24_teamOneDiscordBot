@@ -8,9 +8,13 @@ import discord
 def create_grid():
     print("Behold, the game board: ")
     board = [[" ", " ", " "],
-             [" ", " ", " "]
+             [" ", " ", " "],
              [" ", " ", " "]]
     return board
+
+def game():
+    board = create_grid()
+    #print(board)
 
 
 
@@ -40,14 +44,20 @@ async def on_ready():
 async def on_ready():
     channel = bot.get_channel(1297890380578033664)
     await channel.send("Type Accept to join game")
+    #await channel.send(game())
 
  #EVENT LISTENER FOR WHEN A NEW MESSAGE IS SENT TO A CHANNEL.
 @bot.event
 async def on_message(message):
+    grid = create_grid()
+
+
     # CHECKS IF THE MESSAGE THAT WAS SENT IS EQUAL TO "HELLO".
     if message.content == "hello":
         # SENDS BACK A MESSAGE TO THE CHANNEL.
-        await message.channel.send("hey dirtbag")
+        await message.channel.send(grid[0])
+        await message.channel.send(grid[1])
+        await message.channel.send(grid[2])
 
 
-bot.run("API TOKEN")
+bot.run("key")

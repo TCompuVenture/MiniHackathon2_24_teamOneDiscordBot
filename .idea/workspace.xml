@@ -10,6 +10,9 @@
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
+  <component name="HighlightingSettingsPerFile">
+    <setting file="file://$PROJECT_DIR$/test.py" root0="SKIP_INSPECTION" />
+  </component>
   <component name="ProblemsViewState">
     <hideBySeverity>
       <option value="11" />
@@ -21,6 +24,7 @@
       <option value="100" />
       <option value="200" />
     </hideBySeverity>
+    <option name="selectedTabId" value="CurrentFile" />
   </component>
   <component name="ProjectColorInfo"><![CDATA[{
   "associatedIndex": 0
@@ -34,7 +38,8 @@
   "keyToString": {
     "RunOnceActivity.OpenProjectViewOnStart": "true",
     "RunOnceActivity.ShowReadmeOnStart": "true",
-    "last_opened_file_path": "C:/github things/MiniHackathon2_24_teamOneDiscordBot"
+    "last_opened_file_path": "C:/github things/MiniHackathon2_24_teamOneDiscordBot",
+    "run.code.analysis.last.selected.profile": "aDefault"
   }
 }]]></component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
