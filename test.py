@@ -69,7 +69,7 @@ async def on_message(message):
     channel = bot.get_channel(1297890380578033664)
     #currPlayer = discord.member
     # call to grid function
-    #grid = create_grid()
+    grid = create_grid()
     x_str= str(message.author)
     #assignPlayer(x_str)
     if "Team" in x_str:
@@ -82,9 +82,9 @@ async def on_message(message):
 
 
         # SENDS BACK A MESSAGE TO THE CHANNEL.
-        #await message.channel.send(grid[0])
-        #await message.channel.send(grid[1])
-        #await message.channel.send(grid[2])
+        await message.channel.send(grid[0])
+        await message.channel.send(grid[1])
+        await message.channel.send(grid[2])
 
 
-bot.run("API TOKEN")
+bot.run("")
