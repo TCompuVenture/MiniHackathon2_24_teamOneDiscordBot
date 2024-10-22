@@ -26,15 +26,34 @@ async def on_ready():
 @bot.event
 async def on_ready():
     channel = bot.get_channel(1297890380578033664)
-    await channel.send("Type Accept to join game")
+    await channel.send("** TIC TAC TOE ** \n")
+    await channel.send("Type 'Accept' to join\n")
 
  #EVENT LISTENER FOR WHEN A NEW MESSAGE IS SENT TO A CHANNEL.
 @bot.event
 async def on_message(message):
+    channel = bot.get_channel(1297890380578033664)
     # CHECKS IF THE MESSAGE THAT WAS SENT IS EQUAL TO "HELLO".
-    if message.content == "hello":
+    # need to assign player vars
+    global player1
+    player1 = ""
+    global player2
+    player2 = ""
+    if message.content == "Accept" or message.content == 'accept':
+        #check which player slots are available
+        if player1 == "":
+            player1 = discord.member
+            await channel.send("You are player 1")
+        elif player2 == "":
+            player2 = discord.member
+            await channel.send("You are player 2")
+        else:
+            await channel.send("Game full. Cannot join :((")
+
+
+
         # SENDS BACK A MESSAGE TO THE CHANNEL.
-        await message.channel.send("hey dirtbag")
+        await message.channel.send("")
 
 
 bot.run("API TOKEN")
