@@ -1,10 +1,7 @@
 ###API KEYS HERE###
-from symbol import return_stmt
 
-#IMPORT DISCORD.PY. ALLOWS ACCESS TO DISCORD'S API.
+ #IMPORT DISCORD.PY. ALLOWS ACCESS TO DISCORD'S API.
 import discord
-
-
 
 
 
@@ -90,4 +87,4 @@ async def on_message(message):
         #await message.channel.send(grid[2])
 
 
-bot.run("")
+bot.run("API TOKEN")
