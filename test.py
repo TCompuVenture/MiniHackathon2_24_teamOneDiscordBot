@@ -1,7 +1,10 @@
 ###API KEYS HERE###
+from symbol import return_stmt
 
- #IMPORT DISCORD.PY. ALLOWS ACCESS TO DISCORD'S API.
+#IMPORT DISCORD.PY. ALLOWS ACCESS TO DISCORD'S API.
 import discord
+
+
 
 
 
@@ -16,7 +19,23 @@ def game():
     board = create_grid()
     #print(board)
 
+async def assignPlayer(x_str):
+    # need to assign player vars
+    global player1
+    player1 = ""
+    global player2
+    player2 = ""
 
+    if message.content == "Accept" or message.content == 'accept':
+        #check which player slots are available
+        if player1 == "":
+            player1 = discord.member
+            await channel.send("You are player 1")
+        elif player2 == "":
+            player2 = discord.member
+            await channel.send("You are player 2")
+        else:
+            await channel.send("Game full. Cannot join :((")
 
 
 
@@ -45,37 +64,30 @@ async def on_ready():
     channel = bot.get_channel(1297890380578033664)
     await channel.send("** TIC TAC TOE ** \n")
     await channel.send("Type 'Accept' to join\n")
+    print(type(discord.member))
 
  #EVENT LISTENER FOR WHEN A NEW MESSAGE IS SENT TO A CHANNEL.
 @bot.event
 async def on_message(message):
     channel = bot.get_channel(1297890380578033664)
-    grid = create_grid()
+    #currPlayer = discord.member
+    # call to grid function
+    #grid = create_grid()
+    x_str= str(message.author)
+    #assignPlayer(x_str)
+    if "Team" in x_str:
+        print("bot")
+    else:
+        print(message.author)
 
 
-    # CHECKS IF THE MESSAGE THAT WAS SENT IS EQUAL TO "HELLO".
-    # need to assign player vars
-    global player1
-    player1 = ""
-    global player2
-    player2 = ""
-    if message.content == "Accept" or message.content == 'accept':
-        #check which player slots are available
-        if player1 == "":
-            player1 = discord.member
-            await channel.send("You are player 1")
-        elif player2 == "":
-            player2 = discord.member
-            await channel.send("You are player 2")
-        else:
-            await channel.send("Game full. Cannot join :((")
 
 
 
         # SENDS BACK A MESSAGE TO THE CHANNEL.
-        await message.channel.send(grid[0])
-        await message.channel.send(grid[1])
-        await message.channel.send(grid[2])
+        #await message.channel.send(grid[0])
+        #await message.channel.send(grid[1])
+        #await message.channel.send(grid[2])
 
 
-bot.run("API TOKEN")
+bot.run("")
