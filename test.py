@@ -23,6 +23,11 @@ async def on_ready():
     # PRINTS HOW MANY GUILDS / SERVERS THE BOT IS IN.
     print(bot.guilds)
 
+@bot.event
+async def on_ready():
+    channel = bot.get_channel(1297890380578033664)
+    await channel.send("Type Accept to join game")
+
  #EVENT LISTENER FOR WHEN A NEW MESSAGE IS SENT TO A CHANNEL.
 @bot.event
 async def on_message(message):
@@ -32,4 +37,4 @@ async def on_message(message):
         await message.channel.send("hey dirtbag")
 
 
-bot.run("API_TOKEN_HERE!!!")
+bot.run("API TOKEN")
