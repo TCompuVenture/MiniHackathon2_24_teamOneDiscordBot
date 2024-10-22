@@ -3,6 +3,19 @@
  #IMPORT DISCORD.PY. ALLOWS ACCESS TO DISCORD'S API.
 import discord
 
+
+
+def create_grid():
+    print("Behold, the game board: ")
+    board = [[" ", " ", " "],
+             [" ", " ", " "]
+             [" ", " ", " "]]
+    return board
+
+
+
+
+
  #GETS THE CLIENT OBJECT FROM DISCORD.PY. CLIENT IS SYNONYMOUS WITH BOT.
 bot = discord.Client(intents=discord.Intents.all())
 
